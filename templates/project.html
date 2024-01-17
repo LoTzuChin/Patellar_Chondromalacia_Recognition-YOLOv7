@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片辨識</title>
+</head>
+<body>
+    <h1>髕骨軟化症圖片辨識工具</h1>
+
+    <form action="{{url_for('index')}}" method="post">
+        <div class="form-group">
+          <label for="Path">輸入圖片路徑:</label>
+          <input name="imagePath" type="text" class="text-info my-input" required="required" />
+        </div>
+        <div class="form-group">
+          <a href=# ><button type="submit" class="btn btn-default">Submit</button></a>
+        </div>
+    </form>
+    <img src= "{{ url_for('static', filename='demo.jpg') }}">
+
+        
+    <div id="result">
+        <!-- 辨識結果將顯示在這裡 -->
+    </div>
+
+   
+</body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+    $(function() {
+      $('a#test').bind('click', function(e) {
+        e.preventDefault();
+        $.getJSON('/background_process_test',
+            function(data) {
+          //do nothing
+        });
+        return false;
+      });
+    });
+</script>
+
+
+</script>
+
+</html>
